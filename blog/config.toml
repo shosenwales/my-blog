@@ -1,0 +1,56 @@
+baseurl = ""
+title = "abokihacker"
+theme = "hugo-coder"
+languageCode = "en"
+defaultContentLanguage = "en"
+
+paginate = 20
+canonifyUrls = true
+
+[markup]
+	[markup.highlight]
+		codeFences = true
+		style = "bw"
+		guessSyntax = false
+
+[params]
+    author = "Shuaib Oseni"
+    info = "Hey! I'm blogging about Infosec!"
+    description = "A blog about hacking, programming and web security"
+    keywords = "blog,hacking,personal,web security"
+    avatarurl = "images/me.jpg"
+
+    favicon_32 = "/img/favicon-32x32.png"
+    favicon_16 = "/img/favicon-16x16.png"
+
+    footercontent = "Tech, tips and stuff"
+
+    hidecredits = false
+    hidecopyright = false
+
+    rtl = false
+
+    math = true
+    custom_css = ["css/custom.css"]
+
+# Social links
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    weight = 1
+    url = "https://github.com/shosenwales/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    weight = 3
+    url = "https://twitter.com/Aboki_frontend/"
+
+# Menu links
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "About"
+    weight = 2
+    url = "/about/"
