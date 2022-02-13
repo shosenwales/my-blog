@@ -11,7 +11,7 @@ tags:
 images:
 
   - url: ejpt.png
-    alt: cross-site scripting attacks
+    alt: eJPT certificate
 categories: ""
 externalLink: ""
 series: ""

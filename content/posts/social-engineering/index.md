@@ -10,12 +10,12 @@ tags:
 images:
 
   - url: social-engineering.png
-    alt: cross-site scripting attacks
+    alt: social engineering
 categories: ""
 externalLink: ""
 series: ""
 ---
-![eJPT certificate](social-engineering.png)
+![social engineering](social-engineering.png)
 
 In the area of cybersecurity, there are many different forms of attacks, but one of the most common is social engineering.
 
