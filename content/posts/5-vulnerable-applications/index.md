@@ -37,8 +37,8 @@ Some of the features of DVWA include:
 - Various difficulty levels
 - Runs on a local machine
 
-
-%[https://github.com/digininja/DVWA]
+[![DVWA](dvwa.png)](https://github.com/digininja/DVWA)
+https://github.com/digininja/DVWA
 
 # Juice-Shop
 
@@ -46,15 +46,15 @@ Juice-Shop is a vulnerable web application written in Node.js. It is an open-sou
 
 OWASP Juice-Shop has been designed around the [OWASP Top 10](https://owasp.org/www-project-top-ten/) so developers and security researchers can see how these risks play out in real life. To use this vulnerable application, you can either use the [online](https://juice-shop.herokuapp.com/#/) version or spin up a local instance of the application.
 
-
-%[https://github.com/juice-shop/juice-shop]
+[![juice-shop](juice-shop.png)](https://github.com/juice-shop/juice-shop)
+https://github.com/juice-shop/juice-shop
 
 # WebGoat
 
 WebGoat is another vulnerable web application written in Java. It is maintained by OWASP and designed to teach web application security and penetration techniques. It provides a safe and controlled environment to practice various web application security vulnerabilities.
 
-
-%[https://github.com/WebGoat/WebGoat]
+[![webgoat](goat.png)](https://github.com/WebGoat/WebGoat)
+https://github.com/WebGoat/WebGoat
 
 # Multillidae II
 
@@ -62,15 +62,15 @@ Mutillidae II is a free, open-source web application designed to be vulnerable t
 
 OWASP also maintains this project.
 
-
-%[https://github.com/webpwnized/mutillidae]
+[![multillidae](multi.png)](https://github.com/webpwnized/mutillidae)
+https://github.com/webpwnized/mutillidae
 
 # bWAPP
 
 bWAPP is an open-source vulnerable web application intentionally designed to be insecure. It helps developers, security researchers, and anyone interested in application security learn and practice various web application security vulnerabilities.
 
-
-%[https://github.com/raesene/bWAPP]
+[![bwapp](bwapp.png)](https://github.com/raesene/bWAPP)
+https://github.com/raesene/bWAPP
 
 # Conclusion
 
