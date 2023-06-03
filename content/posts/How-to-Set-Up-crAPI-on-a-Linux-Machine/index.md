@@ -1,6 +1,6 @@
 --- 
 draft: false
-date: 2023-04-15
+date: 2023-06-03
 title: "How to Set Up crAPI on a Linux Machine"
 description: "A tutorial on how to set up crAPI on a Linux machine."
 slug: ""
