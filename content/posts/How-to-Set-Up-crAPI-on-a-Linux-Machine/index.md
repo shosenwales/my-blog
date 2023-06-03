@@ -33,35 +33,40 @@ To follow along in this tutorial, you must have the following:
 
 To set up crAPI, you create a directory called `labs` in your home directory.
 
-
+```bash
     cd ~
     mkdir labs
     cd labs
+```
 
 Next, you need to clone the crAPI application by running the following command:
 
-
+```bash
     git clone https://github.com/OWASP/crAPI.git
+```
 
 Before you can run the application, you need to install `docker.io` and `docker-compose`. To do that, run the following command in your terminal:
 
-
+```bash
     #installing docker.io
     sudo apt install docker.io
     #installing docker-compose 
     sudo apt install docker-compose
+```
 
 Note: if you get the `unable to fetch some archives` error, run the command: `sudo apt update --fix-missing`. Then run the docker.io and docker-compose command one more time.
 
 Now, you can navigate to the crAPI directory:
 
-
+```bash
     cd ~/labs/crAPI/deploy/docker
+```
 
 Next, you can spin up the application by running the following command:
 
-
+```bash
     sudo docker-compose up
+```
 
 Finally, you can view the application in your browser by visiting `localhost:8888`
 
