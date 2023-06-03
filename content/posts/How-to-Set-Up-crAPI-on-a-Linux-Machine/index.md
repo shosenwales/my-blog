@@ -29,7 +29,6 @@ To follow along in this tutorial, you must have the following:
 - Basic knowledge of the terminal.
 - Linux machine — This article uses Kali distribution
 
-
 # Setting up crAPI
 
 To set up crAPI, you create a directory called `labs` in your home directory.
