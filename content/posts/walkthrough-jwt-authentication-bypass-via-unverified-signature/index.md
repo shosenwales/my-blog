@@ -1,6 +1,6 @@
 --- 
 draft: false
-date: 2023-06-03
+date: 2023-06-13
 title: "Walkthrough: JWT authentication bypass via unverified signature"
 description: "A tutorial on how to solve portswigger's JWT authentication bypass via unverified signature lab."
 slug: ""
