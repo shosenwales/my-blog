@@ -25,8 +25,8 @@ Javascript Web Token (JWT) is a secure way of transmitting information between p
 
 In this post, we’ll walk through Portswigger’s [JWT authentication bypass via unverified signature lab](https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-unverified-signature).
 
-Prerequisites
-
+## Prerequisites
+You'll need the following to follow along with this tutorial:
 - Basic knowledge of Burp Suite
 - Cookie Editor browser extension
 
