@@ -45,9 +45,11 @@ JWT unverified signature is a vulnerability that can occur when a server does no
 ## Walkthrough
 1. Let’s intercept the web traffic by running Burp Suite in the background. 
 2. Next, we login using the provided credentials
+
 ![login page](https://paper-attachments.dropboxusercontent.com/s_2795B6B0F8921F339F300E90EA9DDAF0CE6E4BF3BA3690BA55287191EFDA4934_1686610069059_wiener-login.png)
 
 3. After getting in, let’s review the intercepted requests to confirm if the application uses JWT for authentication.
+
 ![](https://paper-attachments.dropboxusercontent.com/s_2795B6B0F8921F339F300E90EA9DDAF0CE6E4BF3BA3690BA55287191EFDA4934_1686610687027_request.png)
 
 4. From the Cookie section, we confirm that the application uses JWT for authentication. Next, we need to decrypt the token. We can do this by installing the `jwt editor` extension in Burp Suite:
@@ -58,15 +60,19 @@ JWT unverified signature is a vulnerability that can occur when a server does no
 ![](https://paper-attachments.dropboxusercontent.com/s_2795B6B0F8921F339F300E90EA9DDAF0CE6E4BF3BA3690BA55287191EFDA4934_1686611188395_jwt-editor.png)
 
 5. To decrypt the token, we need to send the request containing the jwt token to the repeater tab.
+
 ![](https://paper-attachments.dropboxusercontent.com/s_2795B6B0F8921F339F300E90EA9DDAF0CE6E4BF3BA3690BA55287191EFDA4934_1686611654064_editor-section.png)
 
 6. From this, we can understand that the `sub` value defines the user who is logged in. To verify if the server verifies the signature, we can edit the sub value and add `administrator` 
+
 ![](https://paper-attachments.dropboxusercontent.com/s_2795B6B0F8921F339F300E90EA9DDAF0CE6E4BF3BA3690BA55287191EFDA4934_1686613593837_admin-edited.png)
 
 7. We can copy and paste our new JWT token into the session using the `cookie editor` browser extension.
+
 ![](https://paper-attachments.dropboxusercontent.com/s_2795B6B0F8921F339F300E90EA9DDAF0CE6E4BF3BA3690BA55287191EFDA4934_1686613712332_cookie-editor.png)
 
 8. If we navigate to the `/admin` page, we’ll have access to delete the user `carlos`
+
 ![](https://paper-attachments.dropboxusercontent.com/s_2795B6B0F8921F339F300E90EA9DDAF0CE6E4BF3BA3690BA55287191EFDA4934_1686613828875_admin+page.png)
 
 ![](https://paper-attachments.dropboxusercontent.com/s_2795B6B0F8921F339F300E90EA9DDAF0CE6E4BF3BA3690BA55287191EFDA4934_1686613866671_solved.png)
