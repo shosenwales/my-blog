@@ -31,10 +31,15 @@ Prerequisites
 - Cookie Editor browser extension
 
 **Lab description**
+
 This lab uses a JWT-based mechanism for handling sessions. Due to implementation flaws, the server doesn't verify the signature of any JWTs it receives.
+
 **Task**
+
 To solve the lab, modify your session token to access the admin panel at `/admin`, then delete the user `carlos`.
+
 **Credentials**
+
 You can log in to your own account using the following credentials: `wiener:peter`
 
 ## What is  JWT unverified signature?
